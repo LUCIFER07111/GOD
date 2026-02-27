@@ -1,26 +1,28 @@
 (function() {
-    // --- liquid blobs: subtle on all devices ---
+    // --- liquid blobs: clearly visible but not bright ---
     const goo = document.getElementById('goo');
     const isMobile = window.innerWidth < 700;
 
-    // Even on desktop, we reduce count, size, and opacity
-    const blobCount = isMobile ? 10 : 12; // fewer blobs overall
+    // Clear any existing blobs (in case script runs multiple times)
+    goo.innerHTML = '';
+
+    const blobCount = isMobile ? 12 : 16;
 
     for (let i = 0; i < blobCount; i++) {
         const b = document.createElement('div');
         b.className = 'blob';
 
         // Size ranges:
-        // desktop: 80–300px (was 150–550)
-        // mobile:  30–120px (same as before)
+        // desktop: 100–400px (visible but not overwhelming)
+        // mobile:  50–200px
         let size;
         let opacity;
         if (isMobile) {
-            size = 30 + Math.random() * 90;      // 30–120px
-            opacity = 0.4;                        // even more transparent
+            size = 50 + Math.random() * 150;      // 50–200px
+            opacity = 0.5;
         } else {
-            size = 80 + Math.random() * 220;      // 80–300px (smaller)
-            opacity = 0.5;                         // more transparent
+            size = 100 + Math.random() * 300;      // 100–400px
+            opacity = 0.7;
         }
 
         b.style.width = size + 'px';
@@ -29,8 +31,9 @@
         b.style.top = Math.random() * 100 + '%';
         b.style.opacity = opacity;
 
-        const duration = 7 + Math.random() * 10;
-        const delay = Math.random() * 4;
+        // Randomize animation duration for variety
+        const duration = 10 + Math.random() * 12;  // 10–22s
+        const delay = Math.random() * 5;
         b.style.animation = `liquidMove ${duration}s infinite alternate ease-in-out ${delay}s`;
         goo.appendChild(b);
     }
