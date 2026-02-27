@@ -35,10 +35,10 @@ body {
     position: absolute;
     border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%;
     /* Medium-light blue-gray – clearly visible but not bright */
-  background: radial-gradient(
+background: radial-gradient(
   circle at 30% 30%,
-  rgba(160, 120, 255, 0.65),
-  rgba(90, 40, 170, 0.5) 70%
+  rgba(120, 120, 120, 0.6),
+  rgba(40, 40, 40, 0.8) 70%
 );
     opacity: 0.7; /* fallback, script may override per device */
     box-shadow: 0 0 30px rgba(100,150,200,0.15);
