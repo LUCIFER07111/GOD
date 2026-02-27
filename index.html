@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>glass · timer & music</title>
+    <!-- DotGothic16 font & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- external CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- LIQUID BACKGROUND -->
+    <div class="goo-container" id="goo"></div>
+
+    <!-- MAIN CARD -->
+    <div class="glass-card" id="mainCard">
+        <div class="header">
+            <div class="header-left">
+                <!-- Music upload and play controls -->
+                <div class="music-controls">
+                    <input type="file" id="fileInput" accept="audio/*">
+                    <label for="fileInput" class="glass-btn" id="chooseFileBtn">
+                        <i class="fa-solid fa-music"></i> choose
+                    </label>
+                    <button class="glass-btn" id="playPauseBtn" disabled>
+                        <i class="fa-regular fa-circle-play"></i> play
+                    </button>
+                </div>
+            </div>
+            <div class="mode-toggle" id="modeToggle">
+                <i class="fa-regular fa-clock"></i> <i class="fa-solid fa-hourglass"></i>
+            </div>
+        </div>
+
+        <!-- CLOCK MODE -->
+        <div id="clockMode">
+            <div class="time" id="clock">00:00</div>
+            <div class="date" id="date">2026.02.27</div>
+        </div>
+
+        <!-- TIMER/STOPWATCH MODE -->
+        <div id="timerMode" style="display: none;">
+            <div class="mode-selector">
+                <button class="mode-btn active" id="timerModeBtn">TIMER</button>
+                <button class="mode-btn" id="stopwatchModeBtn">STOPWATCH</button>
+            </div>
+            <div class="timer-display" id="timerDisplay">05:00</div>
+            <div class="timer-controls" id="timerControls">
+                <!-- dynamic controls via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- hidden audio element -->
+    <audio id="audioPlayer" style="display: none;"></audio>
+
+    <!-- external JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
