@@ -37,8 +37,8 @@ body {
     /* Medium-light blue-gray – clearly visible but not bright */
   background: radial-gradient(
   circle at 30% 30%,
-  rgba(255, 255, 255, 0.55),
-  rgba(200, 200, 200, 0.35) 70%
+  rgba(160, 120, 255, 0.65),
+  rgba(90, 40, 170, 0.5) 70%
 );
     opacity: 0.7; /* fallback, script may override per device */
     box-shadow: 0 0 30px rgba(100,150,200,0.15);
