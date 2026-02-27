@@ -34,7 +34,7 @@ body {
     position: absolute;
     border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%;
     /* Medium gray with a slight blue tint – visible but not bright */
-  background: radial-gradient(circle at 30% 30%, #8a7bd6, #3f3575 70%);
+ background: radial-gradient(circle at 30% 30%, #6e6e6e, #2f2f2f 70%);
     opacity: 0.65;
     box-shadow: 0 0 40px rgba(100,150,200,0.2);
     will-change: transform, border-radius;
@@ -234,4 +234,5 @@ body {
     .time, .timer-display { font-size: 4rem; letter-spacing: 4px; }
     .header-left { gap: 0.5rem; }
 }
+
 
