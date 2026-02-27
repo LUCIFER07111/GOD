@@ -20,22 +20,23 @@ body {
     position: fixed;
     inset: 0;
     z-index: 1;
-    filter: blur(35px) contrast(18) saturate(180%);
-    animation: subtlePulse 15s infinite alternate ease-in-out;
+    filter: blur(35px) contrast(12) saturate(100%);
+    animation: subtlePulse 20s infinite alternate ease-in-out;
     will-change: filter;
 }
 
 @keyframes subtlePulse {
-    0% { filter: blur(32px) contrast(16) saturate(180%); }
-    100% { filter: blur(40px) contrast(22) saturate(200%); }
+    0% { filter: blur(32px) contrast(10) saturate(80%); }
+    100% { filter: blur(40px) contrast(14) saturate(120%); }
 }
 
 .blob {
     position: absolute;
     border-radius: 70% 30% 60% 40% / 40% 60% 30% 70%;
-    background: radial-gradient(circle at 30% 30%, #fff, rgba(200,220,255,0.9) 70%);
-    opacity: 0.8;
-    box-shadow: 0 0 50px rgba(255,255,255,0.3);
+    /* Medium gray with a slight blue tint – visible but not bright */
+    background: radial-gradient(circle at 30% 30%, #9ab, #234 70%);
+    opacity: 0.65;
+    box-shadow: 0 0 40px rgba(100,150,200,0.2);
     will-change: transform, border-radius;
     animation: liquidMove 12s infinite alternate ease-in-out;
 }
@@ -48,17 +49,14 @@ body {
     100% { transform: translate(-5vw, 7vh) scale(1.05) rotate(48deg); border-radius: 50% 50% 30% 70% / 70% 30% 50% 50%; }
 }
 
-/* ---------- MOBILE: MUCH SOFTER, DARKER BACKGROUND ---------- */
+/* ---------- MOBILE: EXTRA SUBTLE BUT STILL VISIBLE ---------- */
 @media (max-width: 700px) {
     .goo-container {
-        /* Remove intense animation, use a fixed soft filter */
         animation: none;
-        filter: blur(30px) contrast(6) saturate(80%);
+        filter: blur(25px) contrast(5) saturate(60%);
     }
-
     .blob {
-        /* Further reduce opacity (already handled in JS, but safe) */
-        opacity: 0.3 !important; /* Override any inline style if needed */
+        opacity: 0.45 !important;
     }
 }
 
