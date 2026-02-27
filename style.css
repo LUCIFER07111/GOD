@@ -48,6 +48,20 @@ body {
     100% { transform: translate(-5vw, 7vh) scale(1.05) rotate(48deg); border-radius: 50% 50% 30% 70% / 70% 30% 50% 50%; }
 }
 
+/* ---------- MOBILE: MUCH SOFTER, DARKER BACKGROUND ---------- */
+@media (max-width: 700px) {
+    .goo-container {
+        /* Remove intense animation, use a fixed soft filter */
+        animation: none;
+        filter: blur(30px) contrast(6) saturate(80%);
+    }
+
+    .blob {
+        /* Further reduce opacity (already handled in JS, but safe) */
+        opacity: 0.3 !important; /* Override any inline style if needed */
+    }
+}
+
 /* ---------- GLASS CARD ---------- */
 .glass-card {
     position: relative;
@@ -217,7 +231,7 @@ body {
 .timer-btn:active { transform: scale(0.98); }
 .preset-btn { background: rgba(100,150,200,0.3); }
 
-/* mobile */
+/* mobile general */
 @media (max-width: 700px) {
     .time, .timer-display { font-size: 4rem; letter-spacing: 4px; }
     .header-left { gap: 0.5rem; }
